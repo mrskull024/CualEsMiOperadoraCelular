@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="resources/bootstrap v4/css/bootstrap.min.css">
+    <script src="resources/bootstrap v4/js/bootstrap.min.js"></script>
+    <script src="resources/bootstrap v4/js/jquery-3.6.0.min.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0px;
+            height: 100%;
+            background: url(resources/bg.png) no-repeat fixed center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+            text-align: center;
+        }
+
+        .container,
+        .row {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+                <div class="card text-center card border-primary mb-3">
+                    <div class="card-header">
+                        <h3>Con esta Sencilla App podras saber a que compañia pertenece tu número celular</h3>
+                    </div>
+                    <div class="card-body">
+                        <input required="required" type="text" class="form-control-lg text-center"
+                            oninput="this.value=this.value.replace(/[^0-9]/g,'');" placeholder="Digita tu # Celular"
+                            id="telNumber">
+                        <br> <br>
+                        <button type="button" class="btn btn-primary form-control-lg text-center"
+                            onclick="knowOperatorViaAPI()">Cual es el Operador (API)</button>
+                            <button type="button" class="btn btn-primary form-control-lg text-center"
+                            onclick="" disabled>Cual es el Operador (Offline)</button>
+                        <br><br>
+                        <h2 id="operatorText"></h2>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <footer>
+                            <p>Author: mrskull024 (a.k.a Julio Martínez)</p>
+                            <p><a href="https://github.com/mrskull024?tab=repositories" target="_blank">Mi GitHub</a>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="operatorNIC.js"></script>
+<script src="apiOperator.js"></script>
+
+</html>
